@@ -12,8 +12,8 @@ export const CustomCard = ({ content }) => {
       {content.map((item, index) => (
         <Card key={index}>
           <CardActionArea sx={{ display: 'flex' }}>
-            <CardContent >
-              <Typography gutterBottom variant="h5" component="div">
+            <CardContent sx={{ width: '80%' }}>
+              <Typography gutterBottom variant="h6" component="div">
                 {item.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -24,8 +24,8 @@ export const CustomCard = ({ content }) => {
               </Typography>
             </CardContent>
 
-            <Box sx={{display: 'flex', width: '35%', m: 2 }} >
-              <Image src="/_next/static/media/banner.7b4ae297.svg" alt={'oi'} width={0} height={0} sizes="100%" style={{ width: '100%', height: 'auto' }} />
+            <Box sx={{display: 'flex', width: '20%', mr: 2 }} >
+              <Image src={item.image} alt={'oi'} width={0} height={0} sizes="100%" style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '1 / 1' }} />
             </Box>
           </CardActionArea>
         </Card>
