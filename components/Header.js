@@ -1,19 +1,23 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import BasicStack from '../components/BasicStack.js';
+import { BasicStack } from '../components/BasicStack.js';
+import Image from 'next/image';
+
+// TODO: Criar elemento Img pois o react está reclamando
 
 export const Header = ({ banner, name, address, infoObj }) => {
-  console.log(banner.img)
   return (
     <>
-      <img src={banner.img.src} alt={banner.alt} style={{ width: '100%' }}/>
-      <Typography variant="h4" component="h1" gutterBottom align='center'>
+      <div style={{display: 'flex'}}>
+        <Image src={banner.img.src} alt={banner.alt} width={0} height={0} sizes="100vw" style={{ width: '100vw', height: 'auto', margin: '0 -16px' }} />
+      </div>
+      <Typography variant="h4" component="h1" align='center' my={2}>
         {name}
       </Typography>
-      <Typography variant="body1" gutterBottom align='center' mb={2}>
+      <Typography variant="body1" align='center' mb={2}>
         {address}
       </Typography>
-      <BasicStack infoObj={infoObj}/>
+      <BasicStack infoObj={infoObj} mb={4}/>
     </>
   )
 }

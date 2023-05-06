@@ -16,19 +16,18 @@ const Item = styled(Paper)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '8px',
+  cursor: 'pointer',
 }));
 
-export default function DirectionStack({ infoObj }) {
+export const BasicStack = ({ infoObj }) => {
   return (
-    <div>
-      <Stack direction="row" spacing={2} justifyContent={'center'}>
-        {infoObj.map((item) => (
-          <Item key={item.title} theme={theme}>
-            {item.title}
-            <Icon component={item.icon} sx={{ fontSize: 32 }}/>
-          </Item>
-        ))}
-      </Stack>
-    </div>
+    <Stack direction="row" spacing={2} justifyContent={'center'} mb={4}>
+      {infoObj.map((item) => (
+        <Item key={item.title} theme={theme}>
+          {item.title}
+          <Icon component={item.icon} sx={{ fontSize: 32 }}/>
+        </Item>
+      ))}
+    </Stack>
   );
 }
