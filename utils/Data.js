@@ -31,7 +31,7 @@ export const tabsObj = {
   tabs: [
     {
       index: 0,
-      title: 'Tipos de Bolos',
+      title: 'Bolos',
       content: [
         {
           title: 'Bolo de Chocolate',
