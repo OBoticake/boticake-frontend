@@ -27,7 +27,7 @@ export const BasicStack = ({ infoObj }) => {
           <Typography variant="body2">
             {item.title}
           </Typography>
-          <Icon component={item.icon} sx={{ fontSize: 28 }}/>
+          <Icon component={item.icon} sx={{ fontSize: '1.8rem' }}/>
         </Item>
       ))}
     </Stack>
