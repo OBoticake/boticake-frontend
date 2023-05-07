@@ -1,5 +1,5 @@
 import { Quicksand } from 'next/font/google';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 export const quicksand = Quicksand({
   weight: ['300', '400', '500', '700'],
@@ -15,7 +15,7 @@ export const darkTheme = createTheme({
 });
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: '#FFB2B8',
@@ -28,5 +28,7 @@ const theme = createTheme({
     fontFamily: quicksand.style.fontFamily,
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

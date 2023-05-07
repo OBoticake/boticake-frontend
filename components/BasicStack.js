@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import theme from '../src/theme';
-import { Icon } from '@mui/material';
+import { Icon, Typography } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -24,8 +24,10 @@ export const BasicStack = ({ infoObj }) => {
     <Stack direction="row" spacing={2} justifyContent={'center'} mb={4}>
       {infoObj.map((item) => (
         <Item key={item.title} theme={theme}>
-          {item.title}
-          <Icon component={item.icon} sx={{ fontSize: 32 }}/>
+          <Typography variant="body2">
+            {item.title}
+          </Typography>
+          <Icon component={item.icon} sx={{ fontSize: 28 }}/>
         </Item>
       ))}
     </Stack>

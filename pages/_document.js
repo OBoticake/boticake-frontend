@@ -9,7 +9,7 @@ export default function MyDocument(props) {
   const { emotionStyleTags } = props;
 
   return (
-    <Html lang="en" className={quicksand.className}>
+    <Html lang="pt-br" className={quicksand.className}>
       <Head>
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
