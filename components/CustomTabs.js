@@ -1,10 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { CustomCard } from './CustomCard';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { CustomCard } from "./CustomCard";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -33,7 +33,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -45,22 +45,37 @@ export const CustomTabs = ({ tabs }) => {
   };
 
   return (
-    <Box sx={{ width: '100%', mb: 8 }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
+    <Box sx={{ width: "100%", mb: 8 }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
           {tabs.map((tab) => (
-            <Tab key={tab.index} label={tab.title} {...a11yProps(0)} component='a' href={`#${tab.index}`}  />
+            <Tab
+              key={tab.index}
+              label={tab.title}
+              {...a11yProps(0)}
+              component="a"
+              href={`#${tab.index}`}
+            />
           ))}
         </Tabs>
       </Box>
       {tabs.map((tab) => (
-        <TabPanel key={tab.index} value={value} index={tab.index} id={tab.index} >
+        <TabPanel
+          key={tab.index}
+          value={value}
+          index={tab.index}
+          id={tab.index}
+        >
           <Typography variant="h5" component="h1" my={1}>
             {tab.title}
           </Typography>
-          <CustomCard content={tab.content}/>
+          <CustomCard content={tab.content} />
         </TabPanel>
       ))}
     </Box>
   );
-}
+};

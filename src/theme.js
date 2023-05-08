@@ -1,16 +1,16 @@
-import { Quicksand } from 'next/font/google';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { Quicksand } from "next/font/google";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 export const quicksand = Quicksand({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
 export const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
   },
 });
 
@@ -18,10 +18,10 @@ export const darkTheme = createTheme({
 let theme = createTheme({
   palette: {
     primary: {
-      main: '#FFB2B8',
+      main: "#FFB2B8",
     },
     secondary: {
-      main: '#FFB59A',
+      main: "#FFB59A",
     },
   },
   typography: {

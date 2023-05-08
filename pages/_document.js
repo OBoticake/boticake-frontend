@@ -1,15 +1,19 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
-import theme, { quicksand } from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import createEmotionServer from "@emotion/server/create-instance";
+import theme, { quicksand } from "../src/theme";
+import createEmotionCache from "../src/createEmotionCache";
 
 export default function MyDocument(props) {
   const { emotionStyleTags } = props;
 
   return (
-    <Html lang="pt-br" className={quicksand.className} style={{ scrollBehavior: 'smooth' }}>
+    <Html
+      lang="pt-br"
+      className={quicksand.className}
+      style={{ scrollBehavior: "smooth" }}
+    >
       <Head>
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
@@ -71,7 +75,7 @@ MyDocument.getInitialProps = async (ctx) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
