@@ -8,7 +8,7 @@ import { aboutObj, tabsObj } from '../utils/Data.js'
 
 export default function Menu() {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Box>
         <Header {...aboutObj}/>
         <CustomTabs {...tabsObj}/>
