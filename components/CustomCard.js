@@ -25,7 +25,7 @@ export const CustomCard = ({ content }) => {
             </CardContent>
 
             <Box sx={{display: 'flex', width: '20%', mr: 2 }} >
-              <Image src={item.image} alt={'oi'} width={0} height={0} sizes="100%" style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '1 / 1' }} />
+              <Image src={item.image} alt={'oi'} width={0} height={0} sizes="100%" style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '1 / 1', borderRadius: '4px' }} />
             </Box>
           </CardActionArea>
         </Card>
