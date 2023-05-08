@@ -12,16 +12,14 @@ function TabPanel(props) {
   return (
     <div
       role="tabpanel"
-      hidden={value !== index}
+      // hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ my: 2 }}>
-          <div>{children}</div>
-        </Box>
-      )}
+      <Box sx={{ my: 2 }}>
+        <div>{children}</div>
+      </Box>
     </div>
   );
 }
@@ -51,12 +49,12 @@ export const CustomTabs = ({ tabs }) => {
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
           {tabs.map((tab) => (
-            <Tab key={tab.index} label={tab.title} {...a11yProps(0)} />
+            <Tab key={tab.index} label={tab.title} {...a11yProps(0)} component='a' href={`#${tab.index}`}  />
           ))}
         </Tabs>
       </Box>
       {tabs.map((tab) => (
-        <TabPanel key={tab.index} value={value} index={tab.index} >
+        <TabPanel key={tab.index} value={value} index={tab.index} id={tab.index} >
           <Typography variant="h5" component="h1" my={1}>
             {tab.title}
           </Typography>
