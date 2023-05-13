@@ -2,8 +2,7 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import { BasicStack } from '../components/BasicStack.js';
 import Image from 'next/image';
-
-// TODO: Criar elemento Img pois o react está reclamando
+import PropTypes from 'prop-types';
 
 export const Header = ({ banner, name, address, infoObj }) => {
   return (
@@ -27,4 +26,19 @@ export const Header = ({ banner, name, address, infoObj }) => {
       <BasicStack infoObj={infoObj} mb={4} />
     </>
   );
+};
+
+Header.propTypes = {
+  banner: PropTypes.shape({
+    img: PropTypes.object.isRequired,
+    alt: PropTypes.string.isRequired,
+  }).isRequired,
+  name: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  infoObj: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      icon: PropTypes.object.isRequired,
+    })
+  ).isRequired,
 };

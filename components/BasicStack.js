@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import theme from '../src/theme';
 import { Icon, Typography } from '@mui/material';
+import PropTypes from 'prop-types'; 
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,6 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
   cursor: 'pointer',
 }));
 
+
 export const BasicStack = ({ infoObj }) => {
   return (
     <Stack direction="row" spacing={2} justifyContent={'center'} mb={4}>
@@ -30,4 +32,14 @@ export const BasicStack = ({ infoObj }) => {
       ))}
     </Stack>
   );
+};
+
+
+BasicStack.propTypes = {
+  infoObj: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      icon: PropTypes.elementType.isRequired,
+    })
+  ).isRequired,
 };

@@ -45,3 +45,7 @@ details.
 ## format files with prettier
 
 yarn prettier --write <arquivo_a_ser_formatado> or to all files yarn prettier --write .
+
+
+## Para corrigir os error do eslint
+yarn run lintFix

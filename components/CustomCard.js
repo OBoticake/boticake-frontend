@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import Image from 'next/image';
 import { Box } from '@mui/material';
+import PropTypes from 'prop-types'; 
 
 export const CustomCard = ({ content }) => {
   return (
@@ -43,4 +44,15 @@ export const CustomCard = ({ content }) => {
       ))}
     </Box>
   );
+};
+
+CustomCard.propTypes = {
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

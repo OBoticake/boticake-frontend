@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import { CustomCard } from './CustomCard';
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, index, ...other } = props;
 
   return (
     <div
@@ -45,7 +45,7 @@ export const CustomTabs = ({ tabs }) => {
   };
 
   return (
-    <Box sx={{ width: '100%', mb: 8 }}>
+    <Box sx={{ width: '100%', mb: 8 }} id="tabs" >
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           {tabs.map((tab) => (
@@ -70,3 +70,21 @@ export const CustomTabs = ({ tabs }) => {
     </Box>
   );
 };
+
+CustomTabs.propTypes = {
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      index: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          price: PropTypes.string.isRequired,
+          image: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
+};
+
