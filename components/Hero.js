@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import { BasicStack } from '../components/BasicStack.js';
+import { BasicStack } from './BasicStack.js';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-export const Header = ({ banner, name, address, infoObj }) => {
+export const Hero = ({ banner, name, address, infoObj }) => {
   return (
     <>
       <div style={{ display: 'flex' }}>
@@ -28,7 +28,7 @@ export const Header = ({ banner, name, address, infoObj }) => {
   );
 };
 
-Header.propTypes = {
+Hero.propTypes = {
   banner: PropTypes.shape({
     img: PropTypes.object.isRequired,
     alt: PropTypes.string.isRequired,
