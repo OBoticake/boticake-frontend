@@ -1,8 +1,8 @@
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import { BasicStack } from './BasicStack.js';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import * as React from 'react';
+import { BasicStack } from './BasicStack.jsx';
 
 export const Hero = ({ banner, name, address, infoObj }) => {
   return (

@@ -1,8 +1,8 @@
+import { Box, Container } from '@mui/material';
 import * as React from 'react';
-import { Container, Box } from '@mui/material';
-import { Hero } from '../../components/Hero.js';
-import { CustomTabs } from '../../components/CustomTabs.js';
-import { NavigationBar } from '../../components/NavigationBar.js';
+import { CustomTabs } from '../../components/CustomTabs.jsx';
+import { Hero } from '../../components/Hero.jsx';
+import { NavigationBar } from '../../components/NavigationBar.jsx';
 
 import { aboutObj, tabsObj } from '../../utils/Data.js';
 

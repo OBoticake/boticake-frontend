@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { Icon, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import PropTypes from 'prop-types';
+import * as React from 'react';
 import theme from '../src/theme';
-import { Icon, Typography } from '@mui/material';
-import PropTypes from 'prop-types'; 
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

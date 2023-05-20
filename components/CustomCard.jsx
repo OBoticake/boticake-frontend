@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { Box } from '@mui/material';
 import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
 import Image from 'next/image';
-import { Box } from '@mui/material';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
+import * as React from 'react';
 
 export const CustomCard = ({ content }) => {
   return (
