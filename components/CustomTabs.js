@@ -46,7 +46,7 @@ export const CustomTabs = ({ tabs }) => {
 
   return (
     <Box sx={{ width: '100%', mb: 8 }} id="tabs" >
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', position: 'sticky', top: '0', zIndex: 100, backgroundColor: '#fff'}}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           {tabs.map((tab) => (
             <Tab
